@@ -1,20 +1,20 @@
-%bcond_without	tests
+#
+# Conditional build:
+%bcond_without	tests		# build without tests
+
 Summary:	Direct Rendering Manager runtime library
 Name:		libepoxy
 Version:	1.2
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-URL:		http://github.com/anholt/libepoxy
 Source0:	https://github.com/anholt/libepoxy/archive/v%{version}.tar.gz
 # Source0-md5:	12d6b7621f086c0c928887c27d90bc30
+URL:		http://github.com/anholt/libepoxy
 BuildRequires:	Mesa-libEGL-devel
 BuildRequires:	Mesa-libGL-devel
 BuildRequires:	autoconf
-BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python3
@@ -56,8 +56,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
