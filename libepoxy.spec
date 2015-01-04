@@ -62,7 +62,9 @@ Statyczna biblioteka libepoxy.
 
 %prep
 %setup -q
+%ifarch x32
 %patch0 -p1
+%endif
 
 %build
 %{__libtoolize}
