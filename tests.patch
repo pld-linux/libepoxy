@@ -1,0 +1,11 @@
+--- libepoxy-1.2/test/Makefile.am~	2014-05-14 00:22:08.000000000 +0000
++++ libepoxy-1.2/test/Makefile.am	2015-01-04 18:26:59.732311276 +0000
+@@ -64,6 +64,8 @@
+ 
+ XFAIL_TESTS = \
+         egl_and_glx_different_pointers_egl_glx \
++	egl_and_glx_different_pointers_egl \
++	egl_and_glx_different_pointers_glx \
+ 	$()
+ 
+ check_PROGRAMS = $(TESTS)

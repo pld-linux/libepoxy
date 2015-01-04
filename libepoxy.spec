@@ -12,6 +12,7 @@ License:	MIT
 Group:		Libraries
 Source0:	https://github.com/anholt/libepoxy/archive/v%{version}.tar.gz
 # Source0-md5:	12d6b7621f086c0c928887c27d90bc30
+Patch0:		tests.patch
 URL:		https://github.com/anholt/libepoxy
 %{?with_tests:BuildRequires:	Mesa-khrplatform-devel}
 BuildRequires:	Mesa-libEGL-devel
@@ -61,6 +62,7 @@ Statyczna biblioteka libepoxy.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
