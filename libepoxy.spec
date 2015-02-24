@@ -7,7 +7,7 @@ Summary:	Epoxy - GL dispatch library
 Summary(pl.UTF-8):	Epoxy - biblioteka do przekazywania funkcji GL
 Name:		libepoxy
 Version:	1.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	https://github.com/anholt/libepoxy/archive/v%{version}.tar.gz
