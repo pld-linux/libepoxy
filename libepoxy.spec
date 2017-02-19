@@ -6,12 +6,13 @@
 Summary:	Epoxy - GL dispatch library
 Summary(pl.UTF-8):	Epoxy - biblioteka do przekazywania funkcji GL
 Name:		libepoxy
-Version:	1.3.1
+Version:	1.4.0
 Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	https://github.com/anholt/libepoxy/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	981396e099bc91c29e6769e49a0cb8d6
+#Source0Download: https://github.com/anholt/libepoxy/releases
+Source0:	https://github.com/anholt/libepoxy/releases/download/v1.4/%{name}-%{version}.tar.xz
+# Source0-md5:	d8d8cbf2beb64975d424fcc5167a2a38
 Patch0:		tests.patch
 URL:		https://github.com/anholt/libepoxy
 %{?with_tests:BuildRequires:	Mesa-khrplatform-devel}
@@ -22,8 +23,10 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python3
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -97,9 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING README.md
+%doc COPYING ChangeLog README.md
+%attr(755,root,root) %{_libdir}/libepoxy.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libepoxy.so.0
-%attr(755,root,root) %{_libdir}/libepoxy.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
