@@ -6,14 +6,15 @@
 Summary:	Epoxy - GL dispatch library
 Summary(pl.UTF-8):	Epoxy - biblioteka do przekazywania funkcji GL
 Name:		libepoxy
-Version:	1.5.3
+Version:	1.5.4
 Release:	1
 License:	MIT
 Group:		Libraries
 ##Source0Download: https://github.com/anholt/libepoxy/releases
 #Source0:	https://github.com/anholt/libepoxy/releases/download/v1.4/%{name}-%{version}.tar.xz
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libepoxy/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	e2845de8d2782b2d31c01ae8d7cd4cbb
+# Source0-md5:	00f47ad447321f9dc59f85bc1c9d0467
+Patch0:		%{name}-link.patch
 URL:		https://github.com/anholt/libepoxy
 %{?with_tests:BuildRequires:	Mesa-khrplatform-devel}
 BuildRequires:	Mesa-libEGL-devel
@@ -22,7 +23,7 @@ BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	python3
+BuildRequires:	python3 >= 1:3
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
@@ -65,10 +66,11 @@ Statyczna biblioteka libepoxy.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}

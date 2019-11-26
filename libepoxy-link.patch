@@ -1,0 +1,11 @@
+--- libepoxy-1.5.4/test/Makefile.am.orig	2019-11-25 23:44:11.000000000 +0100
++++ libepoxy-1.5.4/test/Makefile.am	2019-11-26 20:49:16.828341166 +0100
+@@ -176,6 +176,8 @@
+ glx_shared_znow_LDADD = $(DLOPEN_LIBS) $(EPOXY) libglx_common.la $(X11_LIBS)
+ glx_shared_znow_LDFLAGS = -Wl,-z,now
+ 
++gl_version_LDADD = $(EPOXY)
++
+ khronos_typedefs_SOURCES = \
+ 	khronos_typedefs.c \
+ 	khronos_typedefs.h \
