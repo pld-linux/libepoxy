@@ -69,7 +69,7 @@ Statyczna biblioteka libepoxy.
 Summary:	API documentation for libepoxy library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libepoxy
 Group:		Documentation
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 API documentation for libepoxy library.
