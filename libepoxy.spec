@@ -17,12 +17,14 @@ Source0:	https://download.gnome.org/sources/libepoxy/1.5/%{name}-%{version}.tar.
 # Source0-md5:	8cbbf1809c3ec3063624939820e7b522
 URL:		https://github.com/anholt/libepoxy
 %{?with_tests:BuildRequires:	Mesa-khrplatform-devel}
-BuildRequires:	Mesa-libEGL-devel
-BuildRequires:	Mesa-libGL-devel
+BuildRequires:	EGL-devel
+BuildRequires:	OpenGL-devel
 %{?with_apidocs:BuildRequires:	doxygen}
 BuildRequires:	meson >= 0.54.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	pkgconfig(egl)
+BuildRequires:	pkgconfig(gl)
 BuildRequires:	python3 >= 1:3
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
