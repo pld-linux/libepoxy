@@ -7,14 +7,14 @@
 Summary:	Epoxy - GL dispatch library
 Summary(pl.UTF-8):	Epoxy - biblioteka do przekazywania funkcji GL
 Name:		libepoxy
-Version:	1.5.8
+Version:	1.5.9
 Release:	1
 License:	MIT
 Group:		Libraries
 ##Source0Download: https://github.com/anholt/libepoxy/releases
 #Source0:	https://github.com/anholt/libepoxy/releases/download/v1.4/%{name}-%{version}.tar.xz
 Source0:	https://download.gnome.org/sources/libepoxy/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	ad6a912bf95e97d6b8b471efc249ed00
+# Source0-md5:	ecd74bc119637f5aac8e2cf6ee8c3899
 URL:		https://github.com/anholt/libepoxy
 %{?with_tests:BuildRequires:	Mesa-khrplatform-devel}
 BuildRequires:	EGL-devel
